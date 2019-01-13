@@ -1,0 +1,26 @@
+﻿@model TestSite.Models.SampleData
+
+<table border="1" id="PersonTable">
+    <thead>
+        <tr>
+            <th><pre lang="html">Persons name</pre></th>
+            <th><pre>View detail</pre></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var person in @Model.People) {
+            <tr>
+                <td>@person.Name</td>
+                <td><pre><a href="/home/ViewDetail/@person.ID">View</a></pre></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<form action="/home/FormData" id="dataForm" method="post">
+    <label>Username</label> <input id="UserName" name="UserName" value="" />
+
+    <label>Gender</label> <select id="Gender" name="Gender"><option value="M">Male</option><option value="F">Female</option><option value="O">Other</option></select>
+
+    <button type="submit">Submit</button>
+</form>

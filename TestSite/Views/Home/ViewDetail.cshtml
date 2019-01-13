@@ -1,0 +1,15 @@
+﻿@model TestSite.Models.SampleData
+<label>Selected person: @Model.SelectedName</label>
+<br />
+<label>
+    Country:
+    <select>
+        @foreach (var Country in Model.Countries) {
+            if (Country.ID == Model.SelectedCountryID) {
+                <option value="@Country.ID" selected>@Country.Name</option>
+            } else {
+                <option value="@Country.ID">@Country.Name</option>
+            }
+        }
+    </select>
+</label>
